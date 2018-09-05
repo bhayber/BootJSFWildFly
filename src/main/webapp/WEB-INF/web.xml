@@ -4,7 +4,7 @@
   <display-name>testJSF</display-name>
   
   <welcome-file-list>
-      <welcome-file>Hello.xhtml</welcome-file>
+      <welcome-file>faces/Hello.xhtml</welcome-file>
    </welcome-file-list>
   
   <servlet>
