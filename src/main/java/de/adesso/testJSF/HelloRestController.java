@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.Data;
 
 @RestController
-public class HelloController {
+public class HelloRestController {
 	@Autowired
 	NamedParameterJdbcTemplate jdbcTemplate;
 
