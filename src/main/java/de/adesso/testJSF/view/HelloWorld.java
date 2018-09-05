@@ -1,8 +1,10 @@
 package de.adesso.testJSF.view;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "helloWorld", eager = true)
+@SessionScoped
 public class HelloWorld {
 
 	private String message;
