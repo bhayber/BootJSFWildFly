@@ -1,13 +1,13 @@
 package de.adesso.testJSF.view;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 import org.springframework.context.annotation.DependsOn;
 
 @ManagedBean(name = "helloWorld", eager = true)
-@ApplicationScoped
+@SessionScoped
 @DependsOn(value = "login")
 public class HelloWorld {
 

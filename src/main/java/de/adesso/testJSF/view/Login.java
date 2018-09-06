@@ -1,10 +1,10 @@
 package de.adesso.testJSF.view;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "login", eager = true)
-@ApplicationScoped
+@SessionScoped
 public class Login {
 
 	private String email;
@@ -42,6 +42,10 @@ public class Login {
 
 	public Login() {
 		System.out.println("Login started!");
+	}
+
+	public String submit() {
+		return "Hello.xhtml";
 	}
 
 }
