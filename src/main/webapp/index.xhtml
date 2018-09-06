@@ -14,28 +14,19 @@
 <div class="container-fluid">
 <div class="align-content-center ml-sm-2"><h1>Login</h1></div>
 
-<form class="form bg-light" action="Hello.xhtml" method="post">
-   
-  <div class="form-group" style="margin-top: 10px">
-  <label for="email">Email Adresse:</label>
-   <input type="email" class="form-control col-12 col-sm-2" name="email" id="email"/>
- </div>
-  
-  <div class="form-group">
-  <label for="pwd">Password:</label>
-  <h:inputSecret class="form-control col-sm-2" id="pwd" name="pwd"/>
-  </div>
-  
-  <div class="form-group">
-  <div class="form-check">
-    <label class="form-check-label">
-      <input class="form-check-input" name="checkRemember" type="checkbox">Remember Me</input>
-    </label>
-  </div>
-  </div>
-  
-  <button type="submit" class="btn btn-info">Submit</button>
-</form>
+   <h:form class="form">      
+      
+      <div class="form-group">
+      <h:inputText class="form-control col-md-3" value="#{login.email}" id="messageText"/>
+      </div>
+      
+      <div class="form-group">
+      <input class="btn btn-danger form-control col-md-3" type="submit" value="submit"/>
+      </div>
+       
+      </h:form>
+
+
 </div>
 </body> 
 </html>

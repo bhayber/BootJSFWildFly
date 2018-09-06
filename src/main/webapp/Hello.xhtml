@@ -14,8 +14,6 @@
 
    <body>
    
-   
-   
    <div class="container">
    
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -41,15 +39,11 @@
   </div>
 </nav>
    
-   <h1>Hello World Beispiel</h1>
-   
-      <!-- #{helloWorld.getMessage()} -->
-      
       <h:form class="form">      
       
       <div class="form-group">
       <label for="messageText">
-      Hello Message :
+      Login Name : #{helloWorld.loginName}
       </label>
       <h:inputText class="form-control col-md-3" value="#{helloWorld.message}" id="messageText"/>
       </div>
