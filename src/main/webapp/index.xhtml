@@ -11,22 +11,33 @@
 </h:head>
 
 <body> 
-<div class="container-fluid">
-<div class="align-content-center ml-sm-2"><h1>Login</h1></div>
+<div class="container">
+<div class="align-content-center mb-0 mb-lg-4"><h1>Login</h1></div>
 
-   <h:form onsubmit="#{login.submit()}" >      
-      
-      <div class="form-group">
-      <h:inputText class="form-control col-md-3" value="#{login.email}" id="messageText"/>
-      </div>
-      
-      <div class="form-group">
-       <h:commandButton class="btn btn-danger form-control col-md-3" action="#{login.submit()}" value="Einloggen" />
-      </div>
-       
-      </h:form>
-	  
+		<h:form onsubmit="#{login.submit()}">
 
-</div>
+			<div class="form-group">
+				<label for="email">Benutzername :</label>
+				<h:inputText class="form-control col-md-3" value="#{login.email}"
+					id="email" />
+			</div>
+
+			<div class="form-check-inline">
+				<label class="form-check-label" for="check1"> <h:selectBooleanCheckbox
+						id="check1" styleClass="form-check-input"
+						value="#{login.remember_me}" /> <h:outputText value="Remember Me" />
+				</label>
+			</div>
+
+			<div class="form-group mt-1">
+				<h:commandButton class="btn btn-danger form-control col-md-3"
+					action="#{login.submit()}" value="Einloggen">
+				</h:commandButton>
+			</div>
+
+		</h:form>
+
+
+	</div>
 </body> 
 </html>

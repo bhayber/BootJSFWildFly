@@ -1,14 +1,18 @@
 package de.adesso.testJSF.view;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "login", eager = true)
 @SessionScoped
-public class Login {
+public class Login implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String email;
 	private String password;
+	private boolean remember_me = true;
 
 	/**
 	 * @return the name
@@ -46,6 +50,21 @@ public class Login {
 
 	public String submit() {
 		return "Hello.xhtml";
+	}
+
+	/**
+	 * @return the remember_me
+	 */
+	public boolean isRemember_me() {
+		return remember_me;
+	}
+
+	/**
+	 * @param remember_me
+	 *            the remember_me to set
+	 */
+	public void setRemember_me(boolean remember_me) {
+		this.remember_me = remember_me;
 	}
 
 }

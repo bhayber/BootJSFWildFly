@@ -1,5 +1,7 @@
 package de.adesso.testJSF.view;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -9,7 +11,9 @@ import org.springframework.context.annotation.DependsOn;
 @ManagedBean(name = "helloWorld", eager = true)
 @SessionScoped
 @DependsOn(value = "login")
-public class HelloWorld {
+public class HelloWorld implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private String message;
 
