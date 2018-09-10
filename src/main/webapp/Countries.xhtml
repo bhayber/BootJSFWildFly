@@ -40,22 +40,26 @@
 			</nav>
 			<div class="bg-secondary col-sm-2 offset-md-2">
 				Login Name :
-				<p>#{countries.loginName}</p>
+				<p>#{helloWorld.loginName}</p>
 			</div>
 		</div>
 		</div>
 		
-	<div class="container">
+	<div class="container mt-2">
+	<h1>Bitte wählen Sie die Länder aus!</h1>
+	</div>	
+		
+	<div class="container mt-2">
 		<h:form>
 
-			<h:selectManyCheckbox id="course4"
+			<h:selectManyListbox  id="course4" style="width: 600px;height: 600px; overflow-y: scroll;"
 				value="#{countriesView.selectedCountryIsos}">
-				<div class="checkbox">
-					<f:selectItems value="#{countriesView.countries}" var="country"
+				<div>
+					<f:selectItems class="list-group-item-info" value="#{countriesView.countries}" var="country"
 						itemLabel="#{country.name}" itemValue="#{country.iso}" />
 				</div>
-			</h:selectManyCheckbox>
-
+			</h:selectManyListbox>
+		
 
 			<div class="form-group mt-1">
 
@@ -67,21 +71,6 @@
 		</h:form>
 	</div>
 
-	<div class="container">
-  <h2>Form control: checkbox</h2>
-  <p>The form below contains three checkboxes. The last option is disabled:</p>
-  <form>
-    <div class="checkbox">
-      <label><input type="checkbox" value=""/>Option 1</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value=""/>Option 2</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="" />Option 3</label>
-    </div>
-  </form>
-</div>
 
 </body>
 </html>
