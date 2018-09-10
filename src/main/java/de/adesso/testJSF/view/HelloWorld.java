@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 import org.springframework.context.annotation.DependsOn;
 
 @ManagedBean(name = "helloWorld", eager = true)
-@SessionScoped
+@RequestScoped
 @DependsOn(value = "login")
 public class HelloWorld implements Serializable {
 
