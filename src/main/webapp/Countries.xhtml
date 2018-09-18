@@ -17,7 +17,7 @@
 
 	<div class="container-fluid">
 
-		<div class="row">
+		<div class="row bg-dark">
 			<nav class="navbar col-sm-8 navbar-expand-lg navbar-dark bg-dark">
 			<a class="navbar-brand" href="index.xhtml">Home</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -51,12 +51,12 @@
 
 	<div class="container-fluid mt-2">
 		<div class="row">
-		
-			<div class="col-sm-5">
+
+			<div class="col-sm-4">
 				<h:form>
 
 					<h:selectManyListbox id="course4"
-						style="height: 600px; overflow-y: scroll;"
+						style="height: 600px; overflow-y: scroll; width:100%"
 						value="#{countriesView.selectedCountryIsos}">
 						<div>
 							<f:selectItems class="list-group-item-info"
@@ -74,49 +74,73 @@
 
 				</h:form>
 			</div>
-	
-	<div class="col-sm-2">
-		  <div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>
-
-
-		<div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>
 		
-		<div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>	
+				<div class="col-sm-4 dropdown">
+				<h:form>
+ 
+					<h:selectOneMenu styleClass="dropdown-menu.show"
+						style="width:100%"
+						value="#{countriesView.selectedCountryIso}">
+						<div>
+							<f:selectItems
+								value="#{countriesView.countries}" var="country"
+								itemLabel="#{country.name}" itemValue="#{country.iso}" />
+						</div>
+					</h:selectOneMenu>
+
+					<div class="form-group mt-1">
+ 
+						<h:commandButton class="btn btn-danger form-control"
+							action="Countries.xhtml" value="Speichern">
+						</h:commandButton>
+					</div>
+
+				</h:form>
+			</div>	
 			
+
+			<div class="col-sm-2">
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+			</div>
+
+
+			<div class="col-sm-2">
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+				<div>
+					<h:graphicImage styleClass="img-fluid"
+						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+				</div>
+
+			</div>
+
+
+		</div>
 	</div>
-
-
-<div class="col-sm-2">
-		  <div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>
-
-
-		<div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>
-		
-		<div>
-			<h:graphicImage styleClass="img-fluid" 
-				value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-		</div>	
-			
-	</div>
-
-
-</div>
-		</div>
 
 
 

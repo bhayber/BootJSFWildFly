@@ -10,6 +10,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 <title>JSF Tutorial!</title>
 </head>
 
@@ -17,8 +18,8 @@
 
 	<div class="container-fluid">
 
-		<div class="row">
-			<nav class="navbar col-sm-8 navbar-expand-lg navbar-dark bg-dark">
+		<div class="row bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark col-10">
 			<a class="navbar-brand" href="index.xhtml">Home</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNav" aria-controls="navbarNav"
@@ -26,7 +27,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
+				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="Hello.xhtml">Hello World</a></li>
 					<li class="nav-item"><a class="nav-link"
@@ -37,11 +38,48 @@
 					</li>
 				</ul>
 			</div>
+			 
+
+			
 			</nav>
-			<div class="bg-secondary col-sm-2 offset-md-2">
-				Login Name :
-				<p>#{helloWorld.loginName}</p>
-			</div>
+			
+			   <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/svg/si-glyph-person-man.svg" alt="" />
+                        <strong> <h:outputText value="#{login.email}" /> </strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      
+                        <li>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        
+                                        	<img src="images/svg/si-glyph-person-man.svg" />
+								<p>
+									<strong>Mahesh</strong>
+								</p>
+								<p>justdemo@gmail.com</p>
+								<p>
+									<a href="#" class="btn btn-primary btn-block btn-sm">Logout</a>
+								</p>
+                                        
+                                        <p>
+                                        	<a href="#" class="btn btn-primary btn-block">My Profile</a>
+                                            <a href="#" class="btn btn-danger btn-block">Change Password</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+			
+			
+	
 		</div>
 		
 		<h1 class="col-sm-3 text-success">Hello World !</h1>

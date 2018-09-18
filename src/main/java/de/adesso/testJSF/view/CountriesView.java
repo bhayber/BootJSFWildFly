@@ -44,6 +44,8 @@ public class CountriesView implements Serializable {
 
 	private String[] selectedCountryIsos;
 
+	private String selectedCountryIso;
+
 	/**
 	 * @return the selectedCountryIsos
 	 */
@@ -101,6 +103,21 @@ public class CountriesView implements Serializable {
 
 	public CountriesView() {
 		System.out.println("Countryview started!");
+	}
+
+	/**
+	 * @return the selectedCountryIso
+	 */
+	public String getSelectedCountryIso() {
+		return selectedCountryIso;
+	}
+
+	/**
+	 * @param selectedCountryIso
+	 *            the selectedCountryIso to set
+	 */
+	public void setSelectedCountryIso(String selectedCountryIso) {
+		this.selectedCountryIso = selectedCountryIso;
 	}
 
 }
