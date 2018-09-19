@@ -49,7 +49,7 @@ public class Login implements Serializable {
 	}
 
 	public String submit() {
-		return "Hello.xhtml";
+		return "Hello";
 	}
 
 	/**

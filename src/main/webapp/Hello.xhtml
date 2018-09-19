@@ -5,6 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -19,13 +20,19 @@
 	<div class="container-fluid">
 
 		<div class="row bg-dark">
+			
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark col-10">
-			<a class="navbar-brand" href="index.xhtml">Home</a>
+			
+			<!-- <a class="navbar-brand" href="index.xhtml">Home</a> -->
+			
+			<h:link styleClass="navbar-brand" value = "Home" outcome = "index" />
+			
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNav" aria-controls="navbarNav"
 				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>				
 			</button>
+			
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
@@ -43,7 +50,7 @@
 			
 			</nav>
 			
-			   <ul class="nav navbar-nav">
+			   <ul class="nav navbar-nav ml-md-5">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="images/svg/si-glyph-person-man.svg" alt="" />
@@ -81,9 +88,25 @@
 			
 	
 		</div>
+<h:form>
+		<h:panelGrid id="panel" columns="2" border="1" cellpadding="10"
+			cellspacing="1">
 		
-		<h1 class="col-sm-3 text-success">Hello World !</h1>
-
+			<f:facet name="header">
+				<h:outputText value="Login" />
+			</f:facet>
+			<h:outputLabel value="Username" />
+			<h:inputText />
+			<h:outputLabel value="Password" />
+			<h:inputSecret />
+		
+			<f:facet name="footer">
+				<h:panelGroup style="display:block; text-align:center">
+					<h:commandButton id="submit" value="Submit" />
+				</h:panelGroup>
+			</f:facet>
+		</h:panelGrid>
+</h:form>
 	</div>
 
 </body>

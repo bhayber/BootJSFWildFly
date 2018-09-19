@@ -32,7 +32,6 @@ public class CountryServiceImpl implements CountryService {
 		ObjectMapper mapper = new ObjectMapper();
 		CountryJSON countryJSON = mapper.readValue(
 				new File(new ClassPathResource("countries-DE.json").getFile().getAbsolutePath()), CountryJSON.class);
-		System.out.println(countryJSON);
 		return countryJSON.getCountries();
 	}
 
