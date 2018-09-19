@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<title>JSF Tutorial!</title>
+
+</h:head> 
+<h:body> 
+         <ui:insert name = "header" >
+            <ui:include src = "header.xhtml" />
+            <ui:param name="countrPageIsActive" value="#{countryActive}"></ui:param>
+            <ui:param name="HelloPageIsActive" value="#{helloActive}"></ui:param>
+         </ui:insert>
+          <ui:insert name = "contents" >
+            <ui:include src = "contents.xhtml" />
+         </ui:insert>  
+      <br/>
+   </h:body> 
+</html>
