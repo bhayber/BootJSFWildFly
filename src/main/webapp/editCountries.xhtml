@@ -14,8 +14,10 @@
                   <div class="col-sm-12">
                      <h:form styleClass="form" id="form">
                         <p:growl id="msgs" showDetail="true" />
+                        
                         <p:dataTable id="countryTable" var="country" value="#{editCountriesView.countryList}"
-                           editable="true" style="margin-bottom:20px" scrollable="true">
+                           editable="true" style="margin-bottom:20px" reflow="true" rows="10" paginator="true">
+                           
                            <f:facet name="header">
                               Länder Bearbeiten
                            </f:facet>
