@@ -8,11 +8,6 @@
   <param-value>Development</param-value>
   </context-param>
   
-   <context-param>
-      <param-name>javax.faces.CONFIG_FILES</param-name>
-      <param-value>/WEB-INF/faces-config.xml</param-value>
-   </context-param>
-  
   <welcome-file-list>
       <welcome-file>index.xhtml</welcome-file>
    </welcome-file-list>
@@ -46,5 +41,10 @@
   <session-config>
   <session-timeout>0</session-timeout>
   </session-config>
+  
+  <context-param>
+    <param-name>primefaces.THEME</param-name>
+    <param-value>redmond</param-value>
+</context-param>
   
 </web-app>

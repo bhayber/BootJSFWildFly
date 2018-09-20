@@ -66,7 +66,7 @@ public class CountriesView implements Serializable {
 	 */
 	public Country[] getCountries() {
 		try {
-			return countryService.getCountry();
+			return countryService.getCountries();
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}

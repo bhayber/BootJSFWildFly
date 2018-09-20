@@ -4,6 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:body>
+
 	<ui:composition>
 		<div class="container-fluid">
 			<div class="row bg-dark">
@@ -20,21 +21,24 @@
 
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item #{helloActive}"><a class="nav-link"
-							href="Hello.xhtml">Hello World</a></li>
+						<li class="nav-item #{editCountryActive2}">
+						
+						<a class="nav-link"
+							href="editCountries.xhtml">Länder Bearbeiten</a></li>
+							
 						<li class="nav-item #{countryActive}"><a class="nav-link"
 							href="Countries.xhtml">Länderliste</a></li>
+							
 						<li class="nav-item"><a class="nav-link" href="#">Preisliste</a>
 						</li>
+						
 						<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
 						</li>
 					</ul>
 				</div>
 
-
-
 				</nav>
-
+				
 				<ul class="nav navbar-nav ml-md-5">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <img

@@ -9,6 +9,6 @@ import de.adesso.testJSF.model.Country;
 
 public interface CountryService {
 
-	Country[] getCountry() throws JsonParseException, JsonMappingException, IOException;
+	Country[] getCountries() throws JsonParseException, JsonMappingException, IOException;
 
 }

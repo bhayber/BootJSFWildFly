@@ -28,7 +28,7 @@ import de.adesso.testJSF.model.CountryJSON;
 public class CountryServiceImpl implements CountryService {
 
 	@Override
-	public Country[] getCountry() throws JsonParseException, JsonMappingException, IOException {
+	public Country[] getCountries() throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		CountryJSON countryJSON = mapper.readValue(
 				new File(new ClassPathResource("countries-DE.json").getFile().getAbsolutePath()), CountryJSON.class);
