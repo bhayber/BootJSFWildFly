@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-public class User {
+public class Benutzer {
 
 	/**
 	 * @return the email
@@ -52,6 +52,21 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	/**
