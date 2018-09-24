@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 public class Login implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	private String email;
 	private String password;
 	private boolean remember_me = true;
