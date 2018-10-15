@@ -12,7 +12,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableJpaRepositories(basePackages = { "de.adesso.testJSF" })
 @EntityScan(basePackages = { "de.adesso.testJSF.model" })
 @ComponentScan(basePackages = { "de.adesso.testJSF", "de.adesso.testJSF.service" })
