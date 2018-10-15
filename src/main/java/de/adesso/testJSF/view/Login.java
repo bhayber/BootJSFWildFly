@@ -1,5 +1,8 @@
 package de.adesso.testJSF.view;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
@@ -19,11 +22,13 @@ public class Login implements Serializable {
 	 * @return the name
 	 */
 	public String getEmail() {
-		return email;
+		Authentication authentication =
+				SecurityContextHolder.getContext().getAuthentication();
+		return authentication.getName();
 	}
 
 	/**
-	 * @param name
+	 * @param email
 	 *            the name to set
 	 */
 	public void setEmail(String email) {
