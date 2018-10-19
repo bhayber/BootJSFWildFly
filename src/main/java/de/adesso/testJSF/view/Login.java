@@ -1,12 +1,12 @@
 package de.adesso.testJSF.view;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 
 @ManagedBean(name = "login", eager = true)
 @SessionScoped
@@ -14,26 +14,30 @@ public class Login implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String email;
+	private String username;
 	private String password;
 	private boolean remember_me = true;
 
-	/**
-	 * @return the name
-	 */
-	public String getEmail() {
-		Authentication authentication =
-				SecurityContextHolder.getContext().getAuthentication();
-		return authentication.getName();
+	public boolean isLoggedIn() {
+		return isLoggedIn;
 	}
 
-	/**
-	 * @param email
-	 *            the name to set
-	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLoggedIn(boolean loggedIn) {
+		isLoggedIn = loggedIn;
 	}
+
+	public String getAccesToken() {
+		return accesToken;
+	}
+
+	public void setAccesToken(String accesToken) {
+		this.accesToken = accesToken;
+	}
+
+	private boolean isLoggedIn;
+	private String accesToken;
+
+
 
 	/**
 	 * @return the password
@@ -54,8 +58,10 @@ public class Login implements Serializable {
 		System.out.println("Login started!");
 	}
 
-	public String submit() {
-		return "Hello";
+	public String submit(ActionEvent actionEvent) {
+		// TODO: 19.10.2018 try to obtain access token and set isLoggedIn True
+		// TODO: 19.10.2018 HeaderView Managed Bean erstellen und Requestscoped machen prüfe auf kogged in sonst return login2.xhtml
+		return "index.xhtml";
 	}
 
 	/**
@@ -73,4 +79,11 @@ public class Login implements Serializable {
 		this.remember_me = remember_me;
 	}
 
+	public String getUsername() {
+			return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }
