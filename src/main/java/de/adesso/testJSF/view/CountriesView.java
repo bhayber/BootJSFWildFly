@@ -95,7 +95,7 @@ public class CountriesView implements Serializable {
 	 */
 	public String getLoginName() {
 		if (login != null) {
-			return login.getEmail();
+			return login.getUsername();
 		}
 		System.out.println(login);
 		return loginName;
