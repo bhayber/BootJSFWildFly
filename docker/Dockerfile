@@ -5,4 +5,4 @@ FROM jboss/wildfly
 EXPOSE 8080
 
 # Copy the war file to the deployments folder
-COPY boot-JSF.war /opt/jboss/wildfly/standalone/deployments/boot-JSF.war
+COPY boot.war /opt/jboss/wildfly/standalone/deployments/boot-JSF.war

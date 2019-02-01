@@ -50,11 +50,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>org.joinfaces</groupId>
-            <artifactId>jsf-spring-boot-starter</artifactId>
-        </dependency>
-
       <dependency>
          <groupId>com.sun.faces</groupId>
          <artifactId>jsf-api</artifactId>
