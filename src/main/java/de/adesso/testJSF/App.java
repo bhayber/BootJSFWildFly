@@ -15,14 +15,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = { "de.adesso.testJSF.model" })
 @ComponentScan(basePackages = { "de.adesso.testJSF", "de.adesso.testJSF.service" })
 public class App extends SpringBootServletInitializer {
-	public static void main(String[] args) {
-		SpringApplication.run(App.class, args);
-	}
+    public static void main(String[] args) {
+	SpringApplication.run(App.class, args);
+    }
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(applicationClass);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	return application.sources(applicationClass);
+    }
 
-	private static Class<App> applicationClass = App.class;
+    private static Class<App> applicationClass = App.class;
 }
