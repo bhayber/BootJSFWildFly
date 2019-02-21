@@ -119,6 +119,10 @@
             <scope>test</scope>
         </dependency>
         
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
         
     </dependencies>
     <build>
@@ -136,7 +140,7 @@
                 </dependencies>
                 <configuration>
                 <classifier>JSF</classifier>
-                 <outputDirectory>C:\dev\wildfly-14.0.0.Final\wildfly-14.0.0.Final\standalone\deployments</outputDirectory>
+                 <outputDirectory>C:\dev\wildfly-14.0.0.Final\standalone\deployments</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

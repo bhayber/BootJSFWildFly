@@ -12,112 +12,108 @@ import org.springframework.context.annotation.DependsOn;
 import de.adesso.testJSF.model.Country;
 import de.adesso.testJSF.service.CountryServiceImpl;
 
-@ManagedBean(name = "countriesView", eager = true)
+@ManagedBean(name = "countriesView")
 @SessionScoped
 @DependsOn(value = { "login", "countryServiceImpl" })
 public class CountriesView implements Serializable {
 
-	Logger log = Logger.getLogger(CountriesView.class);
+    Logger log = Logger.getLogger(CountriesView.class);
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@ManagedProperty(value = "#{countryServiceImpl}")
-	private CountryServiceImpl countryService;
+    @ManagedProperty(value = "#{countryServiceImpl}")
+    private CountryServiceImpl countryService;
 
-	/**
-	 * @return the countryService
-	 */
-	public CountryServiceImpl getCountryService() {
-		return countryService;
+    /**
+     * @return the countryService
+     */
+    public CountryServiceImpl getCountryService() {
+	return countryService;
+    }
+
+    /**
+     * @param countryService the countryService to set
+     */
+    public void setCountryService(CountryServiceImpl countryService) {
+	this.countryService = countryService;
+    }
+
+    @ManagedProperty(value = "#{login}")
+    private Login login;
+
+    private String[] selectedCountryIsos;
+
+    private String selectedCountryIso;
+
+    /**
+     * @return the selectedCountryIsos
+     */
+    public String[] getSelectedCountryIsos() {
+	return selectedCountryIsos;
+    }
+
+    /**
+     * @param selectedCountryIsos the selectedCountryIsos to set
+     */
+    public void setSelectedCountryIsos(String[] selectedCountryIsos) {
+	this.selectedCountryIsos = selectedCountryIsos;
+    }
+
+    /**
+     * @return the countries
+     */
+    public Country[] getCountries() {
+	try {
+	    return countryService.getCountries();
+	} catch (Exception e) {
+	    log.error(e.getMessage());
 	}
+	return null;
+    }
 
-	/**
-	 * @param countryService
-	 *            the countryService to set
-	 */
-	public void setCountryService(CountryServiceImpl countryService) {
-		this.countryService = countryService;
+    /**
+     * @return the login
+     */
+    public Login getLogin() {
+	return login;
+    }
+
+    /**
+     * @param login the login to set
+     */
+    public void setLogin(Login login) {
+	this.login = login;
+    }
+
+    private String loginName = "default";
+
+    /**
+     * @return the loginName
+     */
+    public String getLoginName() {
+	if (login != null) {
+	    return login.getUsername();
 	}
+	System.out.println(login);
+	return loginName;
+    }
 
-	@ManagedProperty(value = "#{login}")
-	private Login login;
+    public CountriesView() {
+	System.out.println("Countryview started!");
+    }
 
-	private String[] selectedCountryIsos;
+    /**
+     * @return the selectedCountryIso
+     */
+    public String getSelectedCountryIso() {
+	return selectedCountryIso;
+    }
 
-	private String selectedCountryIso;
-
-	/**
-	 * @return the selectedCountryIsos
-	 */
-	public String[] getSelectedCountryIsos() {
-		return selectedCountryIsos;
-	}
-
-	/**
-	 * @param selectedCountryIsos
-	 *            the selectedCountryIsos to set
-	 */
-	public void setSelectedCountryIsos(String[] selectedCountryIsos) {
-		this.selectedCountryIsos = selectedCountryIsos;
-	}
-
-	/**
-	 * @return the countries
-	 */
-	public Country[] getCountries() {
-		try {
-			return countryService.getCountries();
-		} catch (Exception e) {
-			log.error(e.getMessage());
-		}
-		return null;
-	}
-
-	/**
-	 * @return the login
-	 */
-	public Login getLogin() {
-		return login;
-	}
-
-	/**
-	 * @param login
-	 *            the login to set
-	 */
-	public void setLogin(Login login) {
-		this.login = login;
-	}
-
-	private String loginName = "default";
-
-	/**
-	 * @return the loginName
-	 */
-	public String getLoginName() {
-		if (login != null) {
-			return login.getUsername();
-		}
-		System.out.println(login);
-		return loginName;
-	}
-
-	public CountriesView() {
-		System.out.println("Countryview started!");
-	}
-
-	/**
-	 * @return the selectedCountryIso
-	 */
-	public String getSelectedCountryIso() {
-		return selectedCountryIso;
-	}
-
-	/**
-	 * @param selectedCountryIso
-	 *            the selectedCountryIso to set
-	 */
-	public void setSelectedCountryIso(String selectedCountryIso) {
-		this.selectedCountryIso = selectedCountryIso;
-	}
+    /**
+     * @param selectedCountryIso the selectedCountryIso to set
+     */
+    public void setSelectedCountryIso(String selectedCountryIso) {
+	this.selectedCountryIso = selectedCountryIso;
+    }
 
 }
