@@ -18,7 +18,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @PostConstruct
     private void init() {
-	logger.info("Bin da");
+	logger.info("Bin da", this);
+	logger.debug("HUHU");
     }
 
     @Override

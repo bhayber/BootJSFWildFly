@@ -13,7 +13,7 @@
 		<!-- Rolling File Appender -->
 		<RollingFile name="FileAppender"
 			fileName="logs/jsf.log"
-			filePattern="logs/bucherei-api-%d{yyyy-MM-dd}-%i.log">
+			filePattern="logs/jsf-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout>
 				<Pattern>${LOG_PATTERN}</Pattern>
 			</PatternLayout>
@@ -25,14 +25,13 @@
 	</Appenders>
 	<Loggers>
 
-	<Logger name="*" level="debug" additivity="false">
+	<Logger name="de.adesso.testJSF" level="info" additivity="false">
 		<AppenderRef ref="FileAppender" level="info" />
-		<AppenderRef ref="ConsoleAppender" level="debug" />
 	</Logger>
 
-	<Root level="debug">
+	<Root level="info">
 		<AppenderRef ref="ConsoleAppender" />
-		<AppenderRef ref="FileAppender" />
+		<AppenderRef ref="FileAppender" /> 
 	</Root>
 	</Loggers>
 </Configuration>
