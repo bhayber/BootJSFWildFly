@@ -24,8 +24,4 @@
   <session-config>
     <session-timeout>0</session-timeout>
   </session-config>
-  <context-param>
-    <param-name>primefaces.THEME</param-name>
-    <param-value>cruze</param-value>
-  </context-param>
 </web-app>

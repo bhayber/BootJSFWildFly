@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HelloController {
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public String getHelloPage(HttpServletRequest request) {
-		return "Hello.xhtml";
-	}
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String getHelloPage(HttpServletRequest request) {
+	return "index.xhtml";
+    }
 
 }

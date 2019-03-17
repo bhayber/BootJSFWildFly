@@ -1,5 +1,9 @@
 package de.adesso.testJSF;
 
+import javax.annotation.PostConstruct;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -10,6 +14,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private static final Logger logger = LogManager.getLogger(SecurityConfig.class);
+
+    @PostConstruct
+    private void init() {
+	logger.info("Bin da");
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
