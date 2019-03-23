@@ -24,9 +24,9 @@
 		<div class="row">
 	
 			<div class="col-sm-4">
-				<h:form>
+				<h:form prependId="false">
 				
-				<h:selectManyListbox id="course4"
+				<h:selectManyListbox id="course4" onselect="$"
 						style="height: 600px; overflow-y: scroll; width:100%"
 						value="#{countriesView.selectedCountryIsos}">
 						<div>
@@ -47,18 +47,21 @@
 			</div>
 		
 				<div class="col-sm-4 dropdown">
-				<h:form styleClass="form">
- 
+				<h:form styleClass="form" prependId="false">
+ 				
 					<h:selectOneMenu styleClass="form-control dropdown-menu.show"
-						style="width:100%"
+						style="width:100%" onchange="$('#course4').slideToggle();"
 						value="#{countriesView.selectedCountryIso}">
 						<div>
-							<f:selectItems
-								value="#{countriesView.countries}" var="country"
+							<f:selectItems 
+								value="#{countriesView.countries}" var="country" 
 								itemLabel="#{country.name}" itemValue="#{country.iso}" />
 						</div>
+						<f:ajax execute="@this" event="change" render="lblSelCountry"></f:ajax>
 					</h:selectOneMenu>
-
+					
+					<h:outputLabel id="lblSelCountry" value="#{countriesView.selectedCountryIso}"></h:outputLabel>
+						
 					<div class="form-group mt-1">
  						
 						<h:commandButton class="btn btn-danger form-control"
@@ -67,6 +70,8 @@
 					</div>
 
 				</h:form>
+				
+				
 			</div>	
 			
 
