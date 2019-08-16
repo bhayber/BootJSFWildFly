@@ -2,10 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	 xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:body>
-
 	<ui:composition>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a
 			class="navbar-brand" href="#"> <img
@@ -19,49 +18,35 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		
+
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item #{helloActive}">
-				<a class="nav-link" href="index.xhtml">Home <span class="sr-only">(current)</span>
-				</a>
-				</li>
+				<li class="nav-item #{helloActive}"><a class="nav-link"
+					href="index.xhtml">Home <span class="sr-only">(current)</span>
+				</a></li>
 				<li class="nav-item #{editCountryActive2}"><a class="nav-link"
-					href="editCountries.xhtml">Länder Bearbeiten</a>
-				</li>
-		<li class="nav-item #{countryActive}">
-					  <a class="nav-link"
-							href="Countries.xhtml">Länderliste</a>
-					</li>
-				
+					href="editCountries.xhtml">Länder Bearbeiten</a></li>
+				<li class="nav-item #{countryActive}"><a class="nav-link"
+					href="Countries.xhtml">Länderliste</a></li>
+
 				<li class="nav-item"><a class="nav-link disabled" href="#"
 					tabindex="-1" aria-disabled="true">Disabled</a></li>
 			</ul>
 
+			<div class="dropdown show" style="margin-right: 72px">
+				<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+					id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> #{request.userPrincipal.name} </a>
 
-			<div class="nav-item dropdown" style="color:white">
-				<div class="nav-link dropdown-toggle" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
-				 #{request.userPrincipal.name}
-				</div>
-					
-				<div class="dropdown-menu">
-						<div class="form-group">
-							<h:outputLabel value="admin@admin.de"></h:outputLabel>
-						</div>				
-							<div class="form-group">
-							<!-- <h:outputLabel for="danger" value="#{request.userPrincipal.authorities}"></h:outputLabel> -->
-							<a id="danger" href="logout" class="btn-danger">
-							Logout
-							</a>		
-						</div>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-right: 20px; position: absolute;">
+					<a class="dropdown-item" href="#">Action</a> <a
+						class="dropdown-item" href="#">Another action</a> <a
+						class="dropdown-item" href="#">Something else here</a>
 				</div>
 			</div>
 
-
-
 		</div>
+
 		</nav>
 
 	</ui:composition>
