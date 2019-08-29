@@ -1,6 +1,19 @@
-version: "3.7"
+version: "3"
 services:
-  buecherei-frontend-jsf:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  bootJSFWeb:
+    # replace username/repo:tag with your name and image details
+    image: myapp:latest
+    deploy:
+      replicas: 5 # 5 instancen starten
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:9990"
+    networks:
+      - webnet # mit load balancing
+networks:
+  webnet:

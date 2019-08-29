@@ -2,7 +2,7 @@
 FROM jboss/wildfly
 
 # Expose the default's application port
-EXPOSE 8080
+EXPOSE 9990
 
 # Copy the war file to the deployments folder
 COPY boot.war /opt/jboss/wildfly/standalone/deployments/boot-JSF.war
