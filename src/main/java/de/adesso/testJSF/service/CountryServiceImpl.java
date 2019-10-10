@@ -6,10 +6,12 @@ package de.adesso.testJSF.service;
 import java.io.File;
 import java.io.IOException;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.annotation.PostConstruct;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -22,17 +24,21 @@ import de.adesso.testJSF.model.CountryJSON;
  * @author hayber
  *
  */
-
-@ManagedBean(name = "countryServiceImpl", eager = true)
-@ApplicationScoped
+@Service
 public class CountryServiceImpl implements CountryService {
 
-	@Override
-	public Country[] getCountries() throws JsonParseException, JsonMappingException, IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		CountryJSON countryJSON = mapper.readValue(
-				new File(new ClassPathResource("countries-DE.json").getFile().getAbsolutePath()), CountryJSON.class);
-		return countryJSON.getCountries();
-	}
+    private static final Logger logger = LogManager.getLogger(CountryServiceImpl.class);
 
+    @Override
+    public Country[] getCountries() throws JsonParseException, JsonMappingException, IOException {
+	ObjectMapper mapper = new ObjectMapper();
+	CountryJSON countryJSON = mapper.readValue(
+		new File(new ClassPathResource("countries-DE.json").getFile().getAbsolutePath()), CountryJSON.class);
+	return countryJSON.getCountries();
+    }
+
+    @PostConstruct
+    private void init() {
+	logger.info("Ich bin da");
+    }
 }

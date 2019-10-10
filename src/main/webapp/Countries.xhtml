@@ -2,105 +2,113 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:body>
 
-<ui:composition template="/templates/common.xhtml">
+	<ui:composition template="/templates/common.xhtml">
 
-<ui:param name="countryActive" value="active"></ui:param>
+		<ui:param name="countryActive" value="active"></ui:param>
 
-<ui:define name = "contents">
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
- 
-	<div class="container mt-2">
-		<h1>Bitte wählen Sie die Länder aus!</h1>
-	</div>
+		<ui:define name="contents">
+			<link rel="stylesheet" href="css/bootstrap.min.css" />
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script
+				src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<link rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-	<div class="container-fluid mt-2">
-		<div class="row">
-	
-			<div class="col-sm-4">
-				<h:form prependId="false">
-				
-				<h:selectManyListbox id="course4" onselect="$"
-						style="height: 600px; overflow-y: scroll; width:100%"
-						value="#{countriesView.selectedCountryIsos}">
-						<div>
-							<f:selectItems class="list-group-item-info"
-								value="#{countriesView.countries}" var="country"
-								itemLabel="#{country.name}" itemValue="#{country.iso}" />
-						</div>
-					</h:selectManyListbox>
+			<div class="container mt-2">
+				<h1>Bitte wählen Sie die Länder aus!</h1>
+			</div>
 
-					<div class="form-group mt-1">
+			<div class="container-fluid mt-2">
+				<div class="row">
 
-						<h:commandButton class="btn btn-danger form-control"
-							action="Countries.xhtml" value="Speichern">
-						</h:commandButton>
+					<div class="col-sm-4">
+						<h:form prependId="false">
+
+							<h:selectManyListbox id="course4" onselect="$"
+								style="height: 600px; overflow-y: scroll; width:100%"
+								value="#{countriesView.selectedCountryIsos}">
+								<div>
+									<f:selectItems class="list-group-item-info"
+										value="#{countriesView.countries}" var="country"
+										itemLabel="#{country.name}" itemValue="#{country.iso}" />
+								</div>
+								<p:ajax update=""></p:ajax>
+							</h:selectManyListbox>
+
+							<div class="form-group mt-1">
+
+								<h:commandButton class="btn btn-danger form-control"
+									action="Countries.xhtml" value="Speichern">
+								</h:commandButton>
+							</div>
+
+						</h:form>
 					</div>
 
-				</h:form>
-			</div>
-		
-				<div class="col-sm-4 dropdown">
-				<h:form styleClass="form" prependId="false">
- 				
-					<h:selectOneMenu styleClass="form-control dropdown-menu.show"
-						style="width:100%" onchange="$('#course4').slideToggle();"
-						value="#{countriesView.selectedCountryIso}">
+					<div class="col-sm-4 dropdown">
+						<h:form styleClass="form" prependId="false">
+
+							<h:selectOneMenu styleClass="form-control dropdown-menu.show"
+								style="width:100%" value="#{countriesView.selectedCountryIso}">
+								<div>
+									<f:selectItems value="#{countriesView.countries}" var="country"
+										itemLabel="#{country.name}" itemValue="#{country.iso}" />
+								</div>
+								<p:ajax update="lblSelCountry"></p:ajax>
+							</h:selectOneMenu>
+
+							<h:outputLabel id="lblSelCountry"
+								value="Country ISO : #{countriesView.selectedCountryIso}"></h:outputLabel>
+
+							<div class="form-group mt-1">
+
+								<h:commandButton class="btn btn-danger form-control"
+									action="/Countries.xhtml" value="Speichern">
+								</h:commandButton>
+							</div>
+
+						</h:form>
+
+
+					</div>
+
+
+					<div class="col-sm-2" id="images">
 						<div>
-							<f:selectItems 
-								value="#{countriesView.countries}" var="country" 
-								itemLabel="#{country.name}" itemValue="#{country.iso}" />
+							<h:graphicImage styleClass="img-fluid"
+								value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
 						</div>
-						<f:ajax execute="@this" event="change" render="lblSelCountry"></f:ajax>
-					</h:selectOneMenu>
-					
-					<h:outputLabel id="lblSelCountry" value="#{countriesView.selectedCountryIso}"></h:outputLabel>
+
+
+						<div>
+							<h:graphicImage styleClass="img-fluid"
+								value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+						</div>
+
+						<div>
 						
-					<div class="form-group mt-1">
- 						
-						<h:commandButton class="btn btn-danger form-control"
-							action="Countries.xhtml" value="Speichern">
-						</h:commandButton>
+							<p:graphicImage styleClass="img-fluid" id="pic"
+								value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
+											<p:draggable for="pic" />
+						</div>
+			
 					</div>
 
-				</h:form>
+
+				</div>
+
 				
-				
-			</div>	
-			
-
-			<div class="col-sm-2">
-				<div>
-					<h:graphicImage styleClass="img-fluid"
-						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-				</div>
-
-
-				<div>
-					<h:graphicImage styleClass="img-fluid"
-						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-				</div>
-
-				<div>
-					<h:graphicImage styleClass="img-fluid"
-						value="http://www.tutorialspoint.com/images/jsf-mini-logo.png" />
-				</div>
-
 			</div>
 
+		</ui:define>
 
-		</div>
-	</div>
-
-         </ui:define> 
-
-</ui:composition>
+	</ui:composition>
 
 </h:body>
 </html>

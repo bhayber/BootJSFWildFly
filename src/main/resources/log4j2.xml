@@ -27,6 +27,7 @@
 
 	<Logger name="de.adesso.testJSF" level="info" additivity="false">
 		<AppenderRef ref="FileAppender" level="info" />
+		<AppenderRef ref="ConsoleAppender" level="info" />
 	</Logger>
 
 	<Root level="info">

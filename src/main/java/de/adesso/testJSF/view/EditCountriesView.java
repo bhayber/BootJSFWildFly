@@ -5,23 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.primefaces.event.RowEditEvent;
-import org.springframework.context.annotation.DependsOn;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import de.adesso.testJSF.model.Country;
 import de.adesso.testJSF.service.CountryServiceImpl;
 
-@ManagedBean(name = "editCountriesView")
+@Named
 @SessionScoped
-@DependsOn(value = { "countryServiceImpl" })
 public class EditCountriesView implements Serializable {
 
     private static final Logger logger = LogManager.getLogger(EditCountriesView.class);
@@ -30,12 +28,13 @@ public class EditCountriesView implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ManagedProperty(value = "#{countryServiceImpl}")
+    @Autowired
     private CountryServiceImpl countryService;
 
     @PostConstruct
     public void init() {
 	try {
+	    logger.info("init EditCountriesView");
 	    countryList = Arrays.asList(countryService.getCountries());
 	} catch (Exception e) {
 	    logger.error("Error occured", e);
